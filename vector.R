@@ -89,3 +89,9 @@ gender2 = sample(c('M','F'),size=100000,replace=T,prob=c(0.3,0.7))
 table(gender2)
 prop.table(table(gender2))
 
+
+
+
+
+
+

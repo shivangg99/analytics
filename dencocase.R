@@ -11,7 +11,7 @@ str(sales2)
 head(sales2)
 
 #read file: Method3
-#install.packages('gsheet')
+install.packages('gsheet')
 library(gsheet)
 url = "https://docs.google.com/spreadsheets/d/1h7HU0X_Q4T5h5D1Q36qoK40Tplz94x_HZYHOJJC_edU/edit#gid=216113907"
 sales3 = as.data.frame(gsheet2tbl(url))
@@ -29,9 +29,9 @@ summary(sales)
 
 str(sales)
 dim(sales) #dimensios of DF rows & colnum
-unique(sales$custname)
-length(unique(sales$custname))
-length(unique(sales$region ))
+unique(sales$custname)      #unique customer name
+length(unique(sales$custname)) # no. of unique customer name
+length(unique(sales$region )) #unique sales region
 
 #Rqmt-1 : Loyal Customers -----
 #method-1a
@@ -44,6 +44,10 @@ head(t2)
 library(dplyr)
 sales %>% dplyr::count(custname, sort=TRUE)
 sales %>% dplyr::group_by(custname) %>% dplyr::summarise(n = n()) %>% dplyr::arrange(desc(n))
+                  #grouping                     #counting                 #sorting
+
+#(here dplyr :: is not requred to be written if dpply has been installed)
+
 
 #Reqmt2- Profitable parts----
 #which parts are sold more frequently - count 
@@ -71,7 +75,7 @@ sales %>% group_by(region,custname) %>% summarise(TotalRevenue=sum(revenue)) %>%
 sales %>% group_by(region,custname) %>% summarise(TotalRevenue=sum(revenue)) %>% arrange(desc(TotalRevenue))  %>% top_n(n=2)
 
 #Reqmt-6 : all partnos with margin > 10000 in order region, desc(revenue)
-sales %>% filter(margin > 10000) %>% arrange(region, desc(revenue))
+sales %>% filter(margin > 10000) %>% arrange(desc(revenue))
 #another way
 filter(sales, margin > 10000)  #just margin
 

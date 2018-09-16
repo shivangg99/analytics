@@ -25,3 +25,4 @@ chart_Series(BSESN,type = "candlesticks")
 getSymbols("^BSESN",src="yahoo")
 chart_Series(BSESN)
 
+

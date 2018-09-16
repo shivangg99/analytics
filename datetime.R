@@ -1,4 +1,4 @@
-Handling and creating Dates in R
+#Handling and creating Dates in R
 
 #date in yyyy-mm-dd
 dates1a = c('2018-21-4', '2018-29-4')
@@ -36,11 +36,10 @@ class(pumba)
 pumba1 = as.Date(pumba, '%d-%m-%Y')
 format(pumba1, '%A')
 
-format(as.Date('26-07-1999', '%d-%m-%Y'), '%A')
+format(as.Date('18-04-1994', '%d-%m-%Y'), '%A')
 
 #System Date
 Sys.Date()
-
 format(Sys.Date(), format="%A: %d %B")
 
 #increment/ decrement dates 

@@ -15,6 +15,7 @@ Sys.timezone()
 Sys.timezone(location=F)
 arrive <- ymd_hms("2018-04-27 18:40:15", tz = "Asia/Calcutta")
 arrive
+?ymd_hms
 leave <- ymd_hms("2018-04-29 22:00:00", tz = "Asia/Calcutta")
 leave
 
@@ -33,6 +34,7 @@ hour(arrive)
 day(arrive)
 wday(arrive)
 wday(arrive)
+?wday
 wday(arrive, label = TRUE)
 
 week(arrive)
